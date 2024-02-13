@@ -11,6 +11,19 @@
       crossorigin="anonymous"
     />
     <style>
+      .fadeIn {
+        animation: fadein 4s;
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -20,16 +33,32 @@
 
       body {
         font-family: "Poppins", sans-serif;
-      background-color: #f0f8ff;
+        background-color: #f0f8ff;
       }
 
       #section1 {
-        background-image: url(/images/backFlower.jpg);
+        background-image: url("https://img.freepik.com/premium-photo/valentine-s-day-concept-black-hearts-balloons_46370-3550.jpg");
         height: 100vh;
         background-size: cover;
         background-position: center;
       }
-      #section1 h3 {
+
+      #section1 h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        padding-top: 34%;
+        padding-left: 28%;
+        color: rgba(240, 248, 255, 0.7);
+        border-radius: 15px;
+      }
+      #section2 {
+        background-image: url(/images/backFlower.jpg);
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      #section2 h3 {
         font-size: 2rem;
         font-weight: 600;
         padding-top: 10%;
@@ -38,7 +67,7 @@
         border-radius: 15px;
       }
 
-      #section1 img {
+      #section2 img {
         width: 1000px;
         height: 450px;
         position: absolute;
@@ -48,7 +77,7 @@
         box-shadow: 5px 5px 10px 5px #000000;
       }
 
-      #section2 {
+      #section3 {
         background-image: url(/images/love-arrow-bow.jpg);
         height: 99vh;
         background-size: cover;
@@ -56,19 +85,19 @@
         position: relative;
       }
 
-      #section2 h3 {
+      #section3 h3 {
         font-size: 2rem;
         font-weight: 600;
         margin-top: 10%;
         right: 70%;
-        background-color: rgba(240, 248, 255, 0.4); ;
+        background-color: rgba(240, 248, 255, 0.4);
         display: flex;
         width: 350px;
         padding: 35px;
         border-radius: 15px;
       }
 
-      #section2 img {
+      #section3 img {
         width: 400px;
         height: 700px;
         position: absolute;
@@ -78,25 +107,23 @@
         box-shadow: 5px 5px 10px 5px #000000;
       }
 
-      #section3 {
-        margin: 15px;
-        padding: 15px;
+      #section4 {
         background-image: url(/images/flower.jpeg);
         height: 100vh;
         background-size: cover;
         background-position: center;
         position: relative;
-        left: 16%;
+        padding: 20px;
       }
 
-      #section3 h3 {
+      #section4 h3 {
         font-size: 2rem;
         font-weight: 600;
         padding-top: 10%;
         padding-left: 70%;
       }
 
-      #section3 img {
+      #section4 img {
         width: 1000px;
         height: 450px;
         position: absolute;
@@ -105,11 +132,41 @@
         border-radius: 15px;
         box-shadow: 5px 5px 10px 5px #000000;
       }
+
+      #question-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        margin-top: 10%;
+        margin-left: 32%;
+        font-size: 30px;
+        border-radius: 15px;
+        padding: 20px;
+        width: 500px;
+        height: 400px;
+      }
+
+      #question-form button {
+        margin: 20px;
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 15px;
+        display: flex;
+        margin-top: 15px;
+      }
     </style>
   </head>
   <body>
     <div class="row">
       <div class="col-12" id="section1">
+        <div class="container">
+          <h1>GÜZEL SEVGİLİME</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" id="section2">
         <div class="container">
           <h3>
             "Sevgilim, seni her gün sevmek ve yanında olmak istiyorum ama bazen
@@ -123,7 +180,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12" id="section2">
+      <div class="col-12" id="section3">
         <div class="container">
           <h3>
             "Aşk bir denizse, sen beni sularınla kapla, Yıldızlar kayıp, ışık
@@ -141,20 +198,50 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12" >
-        <div class="container"id="section3"></div>
-      </div>
-    </div>
-    <div class="row">
       <div class="col-12" id="section4">
-        <div class="container"></div>
+        <div class="container">
+          <div id="question-form">
+            <p>Beni seviyor musun?</p>
+            <br />
+            <button type="button"class="btn btn-success"id="yes-button">
+              Evet
+            </button>
+            <button type="button" class="btn btn-danger" id="no-button">
+              Hayır
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          $(".container").each(function () {
+            if ($(this).parent().attr("id") !== "section1") {
+              var imagePos = $(this).offset().top;
+              var topOfWindow = $(window).scrollTop();
+              var windowHeight = $(window).height();
+              if (imagePos < topOfWindow + windowHeight) {
+                $(this).addClass("fadeIn");
+              }
+            }
+          });
+        });
+        document.getElementById('no-button').addEventListener('mouseover', function() {
+          var x = Math.floor(Math.random() * window.innerWidth);
+          var y = Math.floor(Math.random() * window.innerHeight);
+          this.style.position = 'absolute'; // Elementin pozisyonunu mutlaka belirtin
+          this.style.left = x + 'px';
+          this.style.top = y + 'px';
+        });
+        
+      });
+    </script>
   </body>
 </html>
